@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'buch-manager';
+  // Store-Injektion (Alternative: Konstruktor-Injektion)
+  private readonly store = inject<Store>(Store);
+
+  // Beispiel: Dispatch einer Action (optional)
+  // ngOnInit() {
+  //   this.store.dispatch(BookActions.loadBooks());
+  // }
 }
