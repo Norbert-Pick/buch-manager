@@ -16,7 +16,7 @@ import * as BookActions from './book.actions';
 // }
 
 
-  export const initialState: ReadonlyArray<Book> = [];
+  export const initialState: Book[] = [];
 
 // Das wurde vorgeschlagen
 // export const initialState: BookState = {

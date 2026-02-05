@@ -10,6 +10,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     // Registriere den Store mit einem Slice 'books'
-    provideStore({ books: bookReducer })
+    provideStore({ book: bookReducer })
   ]
 };
