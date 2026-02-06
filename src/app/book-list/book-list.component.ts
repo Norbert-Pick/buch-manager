@@ -4,11 +4,14 @@ import { Observable } from 'rxjs';
 import { Book } from '../models/book';
 import { addBook, removeBook } from '../books/book.actions';
 import {AppState} from '../app.state';
+import {AsyncPipe} from '@angular/common';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [],
+  imports: [
+    AsyncPipe
+  ],
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })

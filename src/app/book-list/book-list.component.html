@@ -1,1 +1,21 @@
-<p>book-list works!</p>
+<h1>Bücher</h1>
+
+<div>
+  @for (book of books$ | async ; track book.id) {
+    <div>
+      <h2>{{ book.title }}</h2>
+      <h3>{{ book.author }}</h3>
+      <button (click)="removeBook(book.id)">Buch löschen</button>
+    </div>
+  }
+
+
+</div>
+
+<h2>Lege ein neues Buch an</h2>
+<div>
+  <input #bookId type="text" placeholder="Id">
+  <input #bookTitle type="text" placeholder="Titel">
+  <input #bookAuthor type="text" placeholder="Autor">
+  <button (click)="addBook(bookId.value, bookTitle.value, bookAuthor.value)">Buch hinzufügen</button>
+</div>
